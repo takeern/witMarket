@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script src="../javascript/jquery1.js">
+</script>
+<script src="../javascript/jquery.form.js">
+</script>
+<script>
+$(function(){
+	function show(){
+		alert(data);
+	}
+	var options={
+		type:"POST",
+		url:"../gsform.php",
+		success:function(data){
+			alert(data);
+		}
+	}
+	$('.2').click(function(){
+		$('#1').ajaxSubmit(options);
+		return false;
+	})
+})
+</script>
+<body>
+<form id="1"  enctype="multipart/form-data" >
+<input type="file" name="file[]" />
+<input type="file" name="file[]" />
+<input type="file" name="file[]" />
+<input name="sss" type="text" />
+<div class="2">111</div>
+</form>
+</form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="ContentType" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+function getXMLHttpRequest(){/*建立联系*/ 
+	var request=false;
+	if(window.XMLHttpRequest){
+		request=window.XMLHttpRequest;
+	}
+	else if(window.ActiveXObject)
+	{
+		try{
+			request=window.ActiveXObject('Msml2.XMLHTTP');
+		}
+		catch(e1){
+			try{
+				request=window.ActiveXObject('Microsoft.XMLHTTP');
+			}
+			catch(e2){
+				request=false;
+			}
+		}
+	}
+	return request;
+}
+function responseAjax(){
+	if(myrequest.readystate==4){
+		if(myrequest.status==200)
+		{
+			alert(myrequest.responseText);
+		}
+	}
+	else{
+		alert(myrequest.statusText);
+	}
+}
+var myrequest=getXMLHttpRequest;
+var url="response.php";
+var ran=new Date().getTime();
+myrequest.open('get',url+"&rand="+ran);
+myrequest.onreadystatechange=responseAjax;
+myrequest.send(null);			   
+</script>
+</head>
+
+<body>
+<input type="button" value="get server time" />
+<div id="showtime" ></div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+@charset "utf-8";
+/* CSS Document */
+
+.hr1{
+	border:none;
+	border-top:5px solid #0bb9f8;
+	width:110px;
+	display:inline-block;
+}
+hr{
+	height:1px;
+}
+.content_wrapper{
+	padding-top:90px;
+	margin-left:200px;
+}
+.content{
+	margin:0 auto;
+	padding-top:10px;
+	padding-left:100px;
+	width:900px;
+	
+	
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+/*商品表单*/
+.gs_header{
+	margin-left:20px;
+	color:#999;
+	font-size:10px;
+	font-weight:300;
+}
+.preview{
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+	left:300px;
+	top:100px;
+	position:absolute;
+	margin:0 auto;
+	background-color:#FFF;
+	width:1000px;
+	height:550px;
+}
+.show_img{
+	margin:28px;
+	margin-top:10px;
+	width:450px;
+	height:450px;
+	
+	float:left;
+	padding:0px;
+}
+.goods_info{
+	padding:15px;
+	width:400px;
+}
+.gs_name{
+	font-size:26px;
+	font-weight:500;
+}
+.gs_price{
+	font-size:20px;
+	color:#F00;
+	font-weight:700;
+}
+.preview span{
+	font-size:16px;
+}
+.preview span:nth-child(2){
+}
+.publisher_info em{
+	font-size:12px;
+	color:#CCC;
+}
+.publisher_info img{
+	width:40px;
+	height:40px;
+}
+.publisher_info hr{
+	width:200px;
+	display:inline-block;
+}
+.right{
+	margin:15px;
+	margin-top:0px;
+	width:400px;
+	float:left;
+}
+.gs{
+	padding:15px;
+}
+.goods_info span{
+	color:#0C0;
+}
+.publisher_info{
+	padding:15px;
+}
+.publisher_info div{
+	padding:15px;
+	padding-bottom:0px;
+}
+.publisher_info span{
+	font-size:20px;
+	font-weight:700;
+	padding:20px;
+	display:inline-block;
+}
+.publish_time{
+	padding-top:10px;
+	color:#999;
+	font-size:16px;
+	font-weight:500;
+}
+.publish_time span{
+	font-size:16px;
+	font-weight:500;
+}
+/* add info */
+.add_info{
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+	top:670px;
+	left:300px;
+	position:absolute;
+	height:200px;
+	background-color:#FFF;
+	width:1000px;
+	margin:0 auto;
+}
+.add_info hr{
+	margin-left:5px;
+}
+.padd_info{
+	margin:28px 45px;
+}
+.add_info p:last-child{
+	padding:25px;
+}
+.add_info p:first-child{
+	font-size:22px;
+	margin-left:15px;
+	font-weight:600;
+}
+.add_info hr:hr2{
+	width:400px;
+}
+.add_info hr.hr1{
+	width:130px;
+}
+.add_info .publish2{
+	margin-left:400px;
+	margin-top:40px;
+}
+/* 图片轮播*/ 
+.gs_img{
+	
+	width:400px;
+	height:450px
+	margin:0 auto;
+}
+.gs_img img{
+	margin-left:20px;
+}
+.radiu{
+	padding-top:10px;
+	width:180px;
+	margin:0 auto;
+}
+.radiu li{
+	display:none;
+	cursor:pointer;
+	padding:0px;
+	list-style-type:none;
+	width:17px;
+	height:17px;
+	background-color:#CCC;
+	border-radius:50%;
+	margin:0 12px;
+}
+.be_in{
+	background-color:rgb(11, 185, 248) !important;
+}

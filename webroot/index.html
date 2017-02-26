@@ -1,0 +1,1215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}
+</style>
+<meta name="keywords" content="武汉工程大学,武工大二手工坊,武汉工程大学二手市场,wit二手工坊,校园,大学,大学生,二手,闲置,二手市场,跳蚤市场,旧货市场,二手网,二手交易,校园二手,校园二手市场,校园二手网,校园跳蚤市场,大学生二手,大学生二手市场,大学生二手网,大学生跳蚤市场">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="武工大人自己的二手交易平台！涵盖闲置数码、校园代步、电器日用、图书教材、美妆衣物、运动棋牌、票券小物。满足武汉工程学生校园内的二手交易的需求。学号认证更安全，校内交易更方便。">
+
+<meta name="baidu-site-verification" content="lYqp0yDTkX" />
+<link rel="stylesheet"  href="ccs/all.css" />
+<link rel="stylesheet"  href="ccs/index.css" />
+<script src="javascript/jquery1.js">
+</script>
+<script src="javascript/all.js">
+</script>
+<script src="javascript/index.js">
+</script>
+<script type="text/javascript">
+getgs();
+comein();
+
+$(function(){
+	change_header();
+	$('#username').focus(ac_focus).blur(checkUs).blur(ac_focusout);
+	$('#old_password').focus(ac_focus).blur(ac_focusout);
+	$('#new_password').focus(ac_focus).blur(ac_focusout).blur(check_password);
+	$('#sumbit').click(loginform);
+	$('#username1').click(clear);
+	(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+})
+</script>
+<title>wit二手工坊</title>
+</head>
+<body >
+<div class="header">
+   <div class="title">
+      <em><a href="html/index.html">WIT跳蚤市场</a></em>
+      <span>witmarket.com</span>
+   </div>
+  
+   <div class="searchwrapper">
+        <form action="html/query.html" method="get" target="_blank" onsubmit="return query();" >
+        <input type="text" id="search" name="search" class="search" placeholder="产品信息"  />
+        <input type="submit" value="查询"   />
+        </form>
+   
+   </div> 
+   <div class="navwrapper">
+        <a href="html/ask.html" target="_blank"><div class="publish2">我要求购</div></a> 
+        <nav class="menu">
+             <ul>
+                 <li onclick=""><a  id="a_pub" href="html/publish.html" target="_blank"><div class="publish">我要发布</div></a></li>
+                 <li onclick="zhuce()">注册</li>
+                 <li onclick="login()">登录</li>
+                 <li class="hidden"></li>
+                 <li class="hidden" onclick="slide_left()"><div class="angle"></div></li>
+             </ul>
+        </nav>         
+   </div> 
+</div>   
+
+<nav class="left_nav">
+    <ul>
+              <form class="hidden" action="php/getgstype.php" method="get" >
+              <input type="text" name="type"  id="type"/>
+              <input type="submit" id="gs_tp_su" />
+              </form>
+               <li onclick="log_type(0)"><img src="image/zxfb.png" /><div>最新发布</div></li>
+               <li onclick="log_type(1)"><img src="image/xzsm.png" /><div>闲置数码</div></li>
+               <li onclick="log_type(2)"><img src='image/ride.png' /><div>校园代步</div></li>
+               <li onclick="log_type(3)"><img src='image/dqry.png' /><div>电器日用</div></li>
+               <li onclick="log_type(4)"><img src='image/tsjc.png' /><div>图书教材</div></li>
+               <li onclick="log_type(5)"><img src="image/mzyw.png" /><div>美妆衣物</div></li>
+               <li onclick="log_type(6)"><img src='image/sport.png' /><div>运动棋牌</div></li>
+               <li onclick="log_type(7)"><img src="image/smallthing.png" /><div>票券小物</div></li>  
+    </ul>
+</nav>
+<div class="right_wrapper" onclick="close_0();">
+     <div class="right_content" >
+         <div class="advertising">
+         <a href="html/join.html" target="_blank"><img width="900px" src="image/join.png" /></a>
+         </div>
+         <form method="get" action="php/up_id.php" target="_blank" class="hidden">
+         <input type="text" name="gs_id" id="gsid" />
+         <input type="submit" id="gssb" />
+         </form>
+          <div class="index_title">
+               <a onclick="log_type(0)">更多商品</a>
+               <ul>最新发布</ul>
+               <hr class="hr1" />
+               <hr class="hr2" />
+          </div>
+          <div class="item_wrapper">   <!-- 冒泡简化-->
+               <div class="item" onclick="up_id(0,0)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>  
+               </div>
+               <div class="item" onclick="up_id(0,1)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                   
+               </div>
+               <div class="item" onclick="up_id(0,2)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+               <div class="item" onclick="up_id(0,3)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+               <div class="item" onclick="up_id(0,4)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                    
+               </div>
+               <div class="item" onclick="up_id(0,5)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+        </div>
+        <div class="index_title">
+               <a  onclick="log_type(1)">更多商品</a>
+               <ul>闲置数码</ul>
+               <hr class="hr1" />
+               <hr class="hr2" />
+          </div>
+          <div class="item_wrapper ">
+               <div class="item" onclick="up_id(1,0)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>  
+               </div>
+               <div class="item" onclick="up_id(1,1)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                   
+               </div>
+               <div class="item" onclick="up_id(1,2)">
+                  
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>  
+               </div>
+               <div class="item" onclick="up_id(1,3)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                
+               </div>
+               <div class="item" onclick="up_id(1,4)">
+                  
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                
+               </div>
+               <div class="item" onclick="up_id(1,5)">
+                  
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+        </div>
+        <div class="index_title">
+               <a onclick="log_type(2)">更多商品</a>
+               <ul>校园代步</ul>
+               <hr class="hr1" />
+               <hr class="hr2" />
+          </div>
+          <div class="item_wrapper " >
+               <div class="item" onclick="up_id(2,0)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+               <div class="item" onclick="up_id(2,1)">
+               
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+              
+               </div>
+               <div class="item" onclick="up_id(2,2)">
+             
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+           
+               </div>
+               <div class="item" onclick="up_id(2,3)">
+               
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+               <div class="item" onclick="up_id(2,4)">
+              
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+               <div class="item" onclick="up_id(2,5)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+        </div>
+        <div class="index_title">
+               <a onclick="log_type(3)">更多商品</a>
+               <ul>电器日用</ul>
+               <hr class="hr1" />
+               <hr class="hr2" />
+          </div>
+          <div class="item_wrapper ">
+               <div class="item" onclick="up_id(3,0)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               
+               </div>
+               <div class="item" onclick="up_id(3,1)">
+                
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+               <div class="item" onclick="up_id(3,2)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+               <div class="item" onclick="up_id(3,3)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+               <div class="item" onclick="up_id(3,4)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                   
+               </div>
+               <div class="item" onclick="up_id(3,5)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+        </div>
+        <div class="index_title">
+               <a onclick="log_type(4)">更多商品</a>
+               <ul>图书教材</ul>
+               <hr class="hr1" />
+               <hr class="hr2" />
+          </div>
+          <div class="item_wrapper ">
+               <div class="item" onclick="up_id(4,0)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                   
+               </div>
+               <div class="item" onclick="up_id(4,1)">
+                  
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                  
+               </div>
+               <div class="item" onclick="up_id(4,2)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+               <div class="item" onclick="up_id(4,3)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                
+               </div>
+               <div class="item" onclick="up_id(4,4)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+               <div class="item" onclick="up_id(4,5)">
+                  
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               
+               </div>
+        </div>
+        <div class="index_title">
+               <a  onclick="log_type(5)">更多商品</a>
+               <ul>美妆衣物</ul>
+               <hr class="hr1" />
+               <hr class="hr2" />
+          </div>
+          <div class="item_wrapper ">
+               <div class="item" onclick="up_id(5,0)">
+                
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+               <div class="item" onclick="up_id(5,1)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                  
+               </div>
+               <div class="item" onclick="up_id(5,2)">
+                
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                  
+               </div>
+               <div class="item" onclick="up_id(5,3)">
+                 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                 
+               </div>
+               <div class="item" onclick="up_id(5,4)"> 
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                
+               </div>
+               <div class="item" onclick="up_id(5,5)">
+                  
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                  
+               </div>
+        </div>
+        <div class="index_title">
+               <a  onclick="log_type(6)">更多商品</a>
+               <ul>运动棋牌</ul>
+               <hr class="hr1" />
+               <hr class="hr2" />
+          </div>
+          <div class="item_wrapper ">
+               <div class="item" onclick="up_id(6,0)">
+                
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+                
+               </div>
+               <div class="item" onclick="up_id(6,1)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+               <div class="item" onclick="up_id(6,2)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+               <div class="item" onclick="up_id(6,3)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+               <div class="item" onclick="up_id(6,4)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+               <div class="item" onclick="up_id(6,5)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+        </div>
+        <div class="index_title">
+               <a  onclick="log_type(7)">更多商品</a>
+               <ul>票券小物</ul>
+               <hr class="hr1" />
+               <hr class="hr2" />
+          </div>
+          <div class="item_wrapper ">
+               <div class="item" onclick="up_id(7,0)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+               <div class="item" onclick="up_id(7,1)">
+                  
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+               <div class="item" onclick="up_id(7,2)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+               <div class="item" onclick="up_id(7,3)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+               <div class="item" onclick="up_id(7,4)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+               <div class="item" onclick="up_id(7,5)">
+                    <div class="item_id">
+                    <p></p>
+                    </div>
+                    <div class="img1">
+                         <img src="" />
+                    </div>
+                    <div class="item_price clearfix">
+                    <p></p>
+                    </div>
+                    <div class="item_name">
+                    <p></p>
+                    </div>
+                    <div class="item_publishtime">
+                    <p></p>
+                    </div>
+               </div>
+        </div> 
+   </div>
+</div>
+
+<div class="loginwrapper hidden">
+     <div class="zhuceform hidden">   
+     <label class="login_item1">用户名:</label>
+           <input name="username" type="text" autofocus="autofocus" required="required"class="warming" id="username" placeholder="长度不少于6个字符" autocomplete="off"  /><p>&nbsp;</p> 
+      <label class="login_item2">密码:</label>
+            <input type="password" name="old_password" id="old_password" class="warming"   placeholder="不少于6个字符" required="required"  /><p>&nbsp;</p>
+      <label class="login_item3">确认密码:</label>
+            <input type="password" name="new_password" id="new_password" class="warming" placeholder="请再次输入密码" required="required" /><p>&nbsp;</p>
+      <label class="login_item4">手机号码:</label>
+            <input type="text" id="phone" name="phone" placeholder="请输入手机号码" required="required" class="" /><p>&nbsp;</p> 
+      <label class="login_item">验证码:</label>
+            <<input type="text" name="patche" id="patche1" class="patche"  required="required" class="" /><img class="checkpic" id="checkpic1" onclick="changing1();" src='../php/yz.php' /><p>&nbsp;</p>
+      <input  type="submit" value="注册" id="sumbit"/><p>&nbsp;</p>
+       <div class="p2 p1">已经注册，赶快<em onclick="login()">登录</em>吧！</div>
+      </div>
+      <div class="ss hidden">
+           <p>注册成功</p>
+           <div class="publish2 log" onclick="login()">登录</div>
+      </div>
+    
+    <div class="login hidden">
+       <p>
+           <label class="login_item11">账号:</label>
+           <input name="username1" type="text" autofocus="autofocus" required="required"class="warming" id="username1" placeholder="用户名或手机号"   autocomplete="off" onclick="clear()"  /> 
+      </p>
+      <p>
+           <label class="login_item11">密码:</label>
+           <input type="password" name="password1" id="password1" class="warming"   placeholder="不少于6个字符" required="required"  onclick="clear()"/>
+          
+      </p>
+      <p>
+           <label class="yzlabel">验证码:</label>
+            <input type="text" name="patche" id="patche" class="patche"  required="required" class="" /><img id="checkpic" class="checkpic" onclick="changing();" src='../php/yz.php' />
+      </p>
+      <p class="remind"></p>
+      <div class="publish2 log " onclick="login1()">登录</div>
+      <div class="p1">还没账号？赶快<em onclick="zhuce()">注册</em>吧！</div>
+   </div>
+</div>
+<div class="pm transparent_class">
+     <div class="publish2">个人信息</div>
+     <div class="publish2" onclick="show_state();">我的发布</div>
+     <div class="publish2">我的关注</div>
+     <div class="publish2" onclick="logout()">注销</div>
+</div>
+<div class="pub hidden">
+    <div class="pub_header">
+    我的发布
+    </div>
+    <div class="pub_list  "> 
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,0,0);">已售</span><span class="0" onclick="change_state(0,0,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,1,0);">已售</span><span class="0" onclick="change_state(0,1,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,2,0);">已售</span><span class="0" onclick="change_state(0,2,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,3,0);">已售</span><span class="0" onclick="change_state(0,3,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,4,0);">已售</span><span class="0" onclick="change_state(0,4,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,5,0);">已售</span><span class="0" onclick="change_state(0,5,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,6,0);">已售</span><span class="0" onclick="change_state(0,6,1);">未售</span><span class="id"></span>
+       </div>
+    </div>
+    <div class="pub_list hidden "> 
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,0,0);">已售</span><span class="0" onclick="change_state(0,0,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,1,0);">已售</span><span class="0" onclick="change_state(1,1,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,2,0);">已售</span><span class="0" onclick="change_state(1,2,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,3,0);">已售</span><span class="0" onclick="change_state(1,3,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,4,0);">已售</span><span class="0" onclick="change_state(1,4,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,5,0);">已售</span><span class="0" onclick="change_state(1,5,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,6,0);">已售</span><span class="0" onclick="change_state(1,6,1);">未售</span><span class="id"></span>
+       </div>
+    </div>  
+    <div class="pub_list hidden "> 
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,0,0);">已售</span><span class="0" onclick="change_state(2,0,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,1,0);">已售</span><span class="0" onclick="change_state(2,1,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,2,0);">已售</span><span class="0" onclick="change_state(2,2,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,3,0);">已售</span><span class="0" onclick="change_state(2,3,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,4,0);">已售</span><span class="0" onclick="change_state(2,4,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,5,0);">已售</span><span class="0" onclick="change_state(2,5,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,6,0);">已售</span><span class="0" onclick="change_state(2,6,1);">未售</span><span class="id"></span>
+       </div>
+    </div>  
+    <div class="pub_list  hidden"> 
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,0,0);">已售</span><span class="0" onclick="change_state(3,0,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,1,0);">已售</span><span class="0" onclick="change_state(3,1,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,2,0);">已售</span><span class="0" onclick="change_state(3,2,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,3,0);">已售</span><span class="0" onclick="change_state(3,3,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,4,0);">已售</span><span class="0" onclick="change_state(3,4,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,5,0);">已售</span><span class="0" onclick="change_state(3,5,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,6,0);">已售</span><span class="0" onclick="change_state(3,6,1);">未售</span><span class="id"></span>
+       </div>
+    </div>  
+    <div class="pub_list  hidden"> 
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,0,0);">已售</span><span class="0" onclick="change_state(4,0,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,1,0);">已售</span><span class="0" onclick="change_state(4,1,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,2,0);">已售</span><span class="0" onclick="change_state(4,2,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,3,0);">已售</span><span class="0" onclick="change_state(4,3,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,4,0);">已售</span><span class="0" onclick="change_state(4,4,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,5,0);">已售</span><span class="0" onclick="change_state(4,5,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,6,0);">已售</span><span class="0" onclick="change_state(4,6,1);">未售</span><span class="id"></span>
+       </div>
+    </div>      
+    <div class="turn">
+         <li onclick="turn(0)">1</li>
+         <li onclick="turn(1)">2</li>
+         <li onclick="turn(2)">3</li>
+         <li onclick="turn(3)">4</li>
+         <li onclick="turn(4)">5</li>
+    </div>
+</div>
+</body>
+</html>

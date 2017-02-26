@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}
+</style>
+<meta name="keywords" content="武汉工程大学,武工大二手工坊,武汉工程大学二手市场,wit二手工坊,校园,大学,大学生,二手,闲置,二手市场,跳蚤市场,旧货市场,二手网,二手交易,校园二手,校园二手市场,校园二手网,校园跳蚤市场,大学生二手,大学生二手市场,大学生二手网,大学生跳蚤市场">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="武工大人自己的二手交易平台！涵盖闲置数码、校园代步、电器日用、图书教材、美妆衣物、运动棋牌、票券小物。满足武汉工程学生校园内的二手交易的需求。学号认证更安全，校内交易更方便。">
+<link rel="stylesheet"  href="../ccs/all.css" />
+<link rel="stylesheet"  href="../ccs/publish.css" />
+
+<title>wit二手工坊</title>
+</head>
+<body>
+<div class="header">
+   <div class="title">
+      <em><a href="index.html">WIT跳蚤市场</a></em>
+      <span>witmarket.com</span>
+   </div>
+   <div class="searchwrapper">
+        <form action="query.html" method="get" target="_blank" onsubmit="return query();" >
+        <input type="text" id="search" name="search" class="search" placeholder="产品信息"  />
+        <input type="submit" value="查询"   />
+        </form>
+   </div> 
+   <div class="navwrapper">
+        <a href="ask.html" target="_blank"><div class="publish2">我要求购</div></a> 
+        <nav class="menu">
+             <ul>
+                 <li onclick=""><a  id="a_pub" href="publish.html" target="_blank"><div class="publish">我要发布</div></a></li>
+                 <li onclick="zhuce()">注册</li>
+                 <li onclick="login()">登录</li>
+                 <li class="hidden"></li>
+                 <li class="hidden" onclick="slide_left()"><div class="angle"></div></li>
+             </ul>
+        </nav>         
+   </div> 
+</div>    
+
+<nav class="left_nav">
+    <ul>
+              <form hidden="hidden"  method="get" target="_blank" action="../php/getgstype.php">
+            <input type="text" id="type" name="type" />
+            <input type="submit" id="gs_tp_su"  />
+            </form>
+            
+               <li onclick="log_type(0)"><img src="../image/zxfb.png" /><div>最新发布</div></li>
+               <li onclick="log_type(1)"><img src="../image/xzsm.png" /><div>闲置数码</div></li>
+               <li onclick="log_type(2)"><img src='../image/ride.png' /><div>校园代步</div></li>
+               <li onclick="log_type(3)"><img src='../image/dqry.png' /><div>电器日用</div></li>
+               <li onclick="log_type(4)"><img src='../image/tsjc.png' /><div>图书教材</div></li>
+               <li onclick="log_type(5)"><img src="../image/mzyw.png" /><div>美妆衣物</div></li>
+               <li onclick="log_type(6)"><img src='../image/sport.png' /><div>运动棋牌</div></li>
+               <li onclick="log_type(7)"><img src="../image/smallthing.png" /><div>票券小物</div></li>  
+    </ul>
+</nav>
+<div class="right_wrapper" onclick="close_0();">
+<div class="right_content">
+<div class="content">
+     <div class="goods">
+     <form id="file"  enctype="multipart/form-data" >
+     <input type="file" name="file[]" id="file1" class="file" hidden="hidden" onchange="readAsDataURL(this.files,0)"  />
+        <input type="file" name="file[]" class="file" hidden="hidden" onchange="readAsDataURL(this.files,1)" disabled="disabled"/>
+        <input type="file" name="file[]" class="file" hidden="hidden" onchange="readAsDataURL(this.files,2)" disabled="disabled"/>
+        <input type="file" name="file[]" class="file" hidden="hidden" onchange="readAsDataURL(this.files,3)" disabled="disabled"/>
+        <input type="submit" id="file_su" disabled="disabled" onclick="ajaxfile()" hidden="hidden" />
+        <input type="text" name="username" id='user1' hidden="hidden" />
+       <div class="gs_temp">
+          <label for="gs_name">商品名称</label>
+          <input name="gs_name" type="text" autofocus="autofocus" required="required" id="goods_name" onclick="cleartxt($('#goods_name'))"  placeholder="请输入商品名称(必填)" autocomplete="off"  />
+          <span></span>
+       </div>
+        <div class="gs_temp">   
+          <label for="price">商品价格</label>
+          <input name="price" type="text" autofocus="autofocus" required="required" id="goods_price" onclick="cleartxt($('#goods_price'))" placeholder="请输入商品价格(必填)" autocomplete="off"  />
+          <span></span>
+        </div>
+         <div class="gs_temp">
+          <label for="gs_phone">手机号码</label>
+          <input name="gs_phone" type="text" autofocus="autofocus" required="required" id="gs_phone" onclick="cleartxt($('#gs_phone'))" placeholder="请输入手机号码(选填)" autocomplete="off"  />
+          <span></span>
+        </div>
+        <div class="gs_temp">  
+          <label for="gs_qq">扣扣</label>
+          <input name="gs_qq" type="text" autofocus="autofocus" required="required" id="gs_qq" onclick="cleartxt($('#gs_qq'))" placeholder="请输入qq号码(必填)" autocomplete="off"  />
+          <span></span>
+        </div>
+          <div class="gs_temp">
+          <label for="gs_weixin">微信</label>
+          <input name="gs_weixin" type="text" autofocus="autofocus" required="required" id="goods_weixin" placeholder="请输入微信号（选填）" autocomplete="off"  />
+       </div>
+        <div class="gs_temp"> 
+          <label for="type">商品类别</label>
+          <select name="gs_type" id="goods_type">
+          <option value="闲置数码">闲置数码</option>
+          <option value="校园代步">校园代步</option>
+          <option value="电器日用">电器日用</option>
+          <option value="图书教材">图书教材</option>
+          <option value="美妆衣物">美妆衣物</option>
+          <option value="运动棋牌">运动棋牌</option>
+          <option value="票券小物">票券小物</option>
+          </select>
+       </div>
+        <div class="gs_temp">   
+          <label for="bargain">可否讲价</label>
+          <input type="radio" name="bargain" class="bargain" value="可以" />可以
+          <input type="radio" name="bargain" class="bargain" value="不可以" />不可以
+       </div>
+        <div class="gs_temp"> 
+          <label for="gs_description">附加信息</label>
+          <textarea name="gs_description" id="gs_des" cols="55" rows="4"></textarea>
+        </div>
+        </form> 
+            <div class="upload_img publish2" onclick="$('.upimg').removeClass('hidden');">
+            上传照片
+            </div><span></span>
+            <div class="publish2 preview_sub" onclick="check_pre()">
+            预览商品单
+            </div>
+           <div class="publish2 gs_sub" onclick="$('#file_su').click();">
+           提交
+           <p>
+           </p>
+           </div>  
+        </div>
+     </div>
+     <div class="preview hidden">
+       <div class="gs_header">
+       <span>闲置电器</span>><span>洗衣机</span>
+       </div> 
+       <div class="show_img">
+       </div>
+       <div class="right">
+             <div class="goods_info">
+                 <h1 class=" gs gs_name"></h1>
+                 <h2 class="gs_price gs">0</h2>
+             <span class="bargain gs"></span>
+             <span class="status gs"></span>
+         </div>    
+         <div class="publisher_info">
+            <em>卖家信息</em>
+            <hr class="hr3" />
+            <div>
+               <img src="../image/phone.jpg" /><span class="pber_ph"></span>
+            </div>
+            <div>
+               <img src="../image/weix.png" /><span class="pber_wx"></span>
+            </div>
+            <div>
+                <img src="../image/qq.png" /><span class="pber_qq"></span>
+            </div>
+            <div class="publish_time">
+                发布于<span>2016/07/14 23:29:11</span>
+            </div>
+       </div>
+      </div>
+</div>
+<div class="upimg hidden" >
+    <div class="img_header">
+    上传照片
+    </div>
+    <p>封面</p>
+    <div class="imgwrapper" >
+    <div class="addimg img1" onclick="img(0)">
+    <img src="../image/upimg.png" width="200px" height="230px"   />
+    </div>
+    <div class="addimg img2" onclick="img(1)" >
+    <img src="../image/upimg.png" width="200px" height="230px"  class="hidden"  />
+    </div>
+    <div class="addimg img3" onclick="img(2)">
+    <img src="../image/upimg.png" width="200px" height="230px" class="hidden"  />
+    </div>
+    <div class="addimg img3" onclick="img(3)">
+    <img src="../image/upimg.png" width="200px" height="230px" class="hidden"  />
+    </div>
+   
+    
+    </div>
+    <div class="upimg_bt publish2" onclick="closeupimg()">
+    关闭
+    </div> 
+</div>
+<div class="add_info hidden">
+      <p>附加信息</p>
+      <hr class="hr1" />
+      <hr class="hr2" />
+      <p class="padd_info">1111</p>
+      <p>联系我的时候，请说明是在武工大二手工坊看见的哦(逃~</p>
+      <div class="publish2" onclick="close_pre()">关闭预览</div>
+</div>
+</div>
+</div>
+     <div class="zhuceform hidden">   
+     <label class="login_item1">用户名:</label>
+           <input name="username" type="text" autofocus="autofocus" required="required"class="warming" id="username" placeholder="长度不少于6个字符" autocomplete="off"  /><p>&nbsp;</p> 
+      <label class="login_item2">密码:</label>
+            <input type="password" name="old_password" id="old_password"  class="warming"	  placeholder="不少于6个字符" required="required"  /><p>&nbsp;</p>
+      <label class="login_item3">确认密码:</label>
+            <input type="password" name="new_password" id="new_password" class="warming" placeholder="请再次输入密码" required="required" /><p>&nbsp;</p>
+      <label class="login_item4">手机号码:</label>
+            <input type="text" id="phone" name="phone" placeholder="请输入手机号码" required="required" class="" /><p>&nbsp;</p> 
+      <label class="login_item">验证码:</label>
+            <input type="text" name="patche" id="patche1" class="patche"  required="required" class="" /><img class="checkpic" id="checkpic1" onclick="changing1();" src='../php/yz.php' /><p>&nbsp;</p>
+      <input  type="submit" value="注册" id="sumbit"/><p>&nbsp;</p>
+       <div class="p2 p1">已经注册，赶快<em onclick="login()">登录</em>吧！</div>
+      </div>
+      <div class="ss hidden">
+           <p>注册成功</p>
+           <div class="publish2 log" onclick="login()">登录</div>
+      </div>
+    
+    <div class="login hidden">
+       <p>
+           <label class="login_item11">账号:</label>
+           <input name="username1" type="text" autofocus="autofocus" required="required"class="warming" id="username1" placeholder="用户名或手机号"   autocomplete="off" onclick="clear()"  /> 
+      </p>
+      <p>
+           <label class="login_item11">密码:</label>
+           <input type="password" name="password1" id="password1" class="warming"   placeholder="不少于6个字符" required="required"  onclick="clear()"/>
+          
+      </p>
+      <p>
+           <label class="yzlabel">验证码:</label>
+            <input type="text" name="patche" id="patche" class="patche"  required="required" class="" /><img id="checkpic" class="checkpic" onclick="changing();" src='../php/yz.php' />
+      </p>
+      <p class="remind"></p>
+      <div class="publish2 log " onclick="login1()">登录</div>
+      <div class="p1">还没账号？赶快<em onclick="zhuce()">注册</em>吧！</div>
+   </div>
+</div>
+<div class="pm transparent_class">
+     <div class="publish2">个人信息</div>
+     <div class="publish2" onclick="show_state();">我的发布</div>
+     <div class="publish2">我的关注</div>
+     <div class="publish2" onclick="logout()">注销</div>
+</div>
+<div class="pub hidden">
+    <div class="pub_header">
+    我的发布
+    </div>
+    <div class="pub_list  "> 
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,0,0);">已售</span><span class="0" onclick="change_state(0,0,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,1,0);">已售</span><span class="0" onclick="change_state(0,1,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,2,0);">已售</span><span class="0" onclick="change_state(0,2,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,3,0);">已售</span><span class="0" onclick="change_state(0,3,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,4,0);">已售</span><span class="0" onclick="change_state(0,4,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,5,0);">已售</span><span class="0" onclick="change_state(0,5,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(0,6,0);">已售</span><span class="0" onclick="change_state(0,6,1);">未售</span><span class="id"></span>
+       </div>
+    </div>
+    <div class="pub_list hidden "> 
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,0,0);">已售</span><span class="0" onclick="change_state(0,0,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,1,0);">已售</span><span class="0" onclick="change_state(1,1,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,2,0);">已售</span><span class="0" onclick="change_state(1,2,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,3,0);">已售</span><span class="0" onclick="change_state(1,3,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,4,0);">已售</span><span class="0" onclick="change_state(1,4,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,5,0);">已售</span><span class="0" onclick="change_state(1,5,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(1,6,0);">已售</span><span class="0" onclick="change_state(1,6,1);">未售</span><span class="id"></span>
+       </div>
+    </div>  
+    <div class="pub_list hidden "> 
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,0,0);">已售</span><span class="0" onclick="change_state(2,0,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,1,0);">已售</span><span class="0" onclick="change_state(2,1,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,2,0);">已售</span><span class="0" onclick="change_state(2,2,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,3,0);">已售</span><span class="0" onclick="change_state(2,3,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,4,0);">已售</span><span class="0" onclick="change_state(2,4,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,5,0);">已售</span><span class="0" onclick="change_state(2,5,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(2,6,0);">已售</span><span class="0" onclick="change_state(2,6,1);">未售</span><span class="id"></span>
+       </div>
+    </div>  
+    <div class="pub_list  hidden"> 
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,0,0);">已售</span><span class="0" onclick="change_state(3,0,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,1,0);">已售</span><span class="0" onclick="change_state(3,1,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,2,0);">已售</span><span class="0" onclick="change_state(3,2,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,3,0);">已售</span><span class="0" onclick="change_state(3,3,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,4,0);">已售</span><span class="0" onclick="change_state(3,4,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,5,0);">已售</span><span class="0" onclick="change_state(3,5,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(3,6,0);">已售</span><span class="0" onclick="change_state(3,6,1);">未售</span><span class="id"></span>
+       </div>
+    </div>  
+    <div class="pub_list  hidden"> 
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,0,0);">已售</span><span class="0" onclick="change_state(4,0,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,1,0);">已售</span><span class="0" onclick="change_state(4,1,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,2,0);">已售</span><span class="0" onclick="change_state(4,2,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,3,0);">已售</span><span class="0" onclick="change_state(4,3,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,4,0);">已售</span><span class="0" onclick="change_state(4,4,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,5,0);">已售</span><span class="0" onclick="change_state(4,5,1);">未售</span><span class="id"></span>
+       </div>
+       <div class="hidden">
+           <span></span><span></span><span></span><span class="1" onclick="change_state(4,6,0);">已售</span><span class="0" onclick="change_state(4,6,1);">未售</span><span class="id"></span>
+       </div>
+    </div>      
+    <div class="turn">
+         <li onclick="turn(0)">1</li>
+         <li onclick="turn(1)">2</li>
+         <li onclick="turn(2)">3</li>
+         <li onclick="turn(3)">4</li>
+         <li onclick="turn(4)">5</li>
+    </div>
+</div>
+<script src="../javascript/jquery1.js">
+</script>
+<script src="../javascript/all.js">
+</script>
+<script src="../javascript/publish.js">
+</script>
+<script src="../javascript/jquery.form.js">
+</script>
+<script type="text/javascript">
+
+$(function(){
+	comein();
+	change_header();
+	$('#username').focus(ac_focus).blur(checkUs).blur(ac_focusout);
+	$('#old_password').focus(ac_focus).blur(ac_focusout);
+	$('#new_password').focus(ac_focus).blur(ac_focusout).blur(check_password);
+	$('#sumbit').click(loginform);
+	$('#username1').click(clear);
+	$(document).scroll(f);	
+	(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+})
+</script>
+</body>
+</html>

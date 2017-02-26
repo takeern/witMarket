@@ -1,0 +1,9 @@
+<?
+if($_GET['action']=='logout')
+{
+	session_start();
+	setcookie("us1",'',time()-60);
+	unset($_SESSION['username']);
+	session_destroy();
+}
+?>
