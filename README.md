@@ -3,12 +3,10 @@
 # 技术栈
 jQuery+bootstrap+php
 # 访问地址
- [工大二手市场](http://http://www.witmarket.cn/)
+ [工大二手市场](www.witmarket.cn)
 # 产品图
  ##PC端
  ![](https://github.com/takeern/witMarket/blob/master/webroot/image/pcwitmarket.png)
 
-
-
- ##移动端
+ ##移动端   
  ![](https://github.com/takeern/witMarket/blob/master/webroot/image/mobileWitmarket.png)
